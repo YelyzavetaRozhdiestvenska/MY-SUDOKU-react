@@ -3,7 +3,7 @@
 }
 
 .App-header {
-  background-color: #32dbfd;
+  background-color: saddlebrown;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 
 h1 {
   margin: 80px auto 20px auto;
-  color: #222222;
+  color: bisque;
 }
 
 .cellInput {
@@ -37,6 +37,48 @@ table {
   margin: 20px 0px 80px 0px;
 }
 
+.buttonLevel {
+  margin: 20px 0px 20px 0px;
+}
+
+.easyButton {
+  background-color: green;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.mediumButton {
+  background-color: orange;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 0px 40px;
+}
+
+.expertButton {
+  background-color: crimson;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.newGameButton {
+  background-color: bisque;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 20px 0;
+}
+
 .checkButton {
   background-color: crimson;
   font-weight: bold;
@@ -53,7 +95,7 @@ table {
   border: none;
   border-radius: 20px;
   font-size: 14px;
-  margin: 0px 20px;
+  margin: 0px 40px;
 }
 
 .resetButton {
@@ -66,9 +108,9 @@ table {
 }
 
 .bBorder {
-  border-bottom: 2px solid #32dbfd;
+  border-bottom: 2px solid saddlebrown;
 }
 
 .rBorder {
-  border-right: 2px solid #32dbfd;
+  border-right: 2px solid saddlebrown;
 }

@@ -1,24 +1,41 @@
 import './App.css';
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import { generateSudoku } from '../sudokuGenerator/sudokuGenerator.js';
+// import Timer from './Timer.jsx';
 
-const initial = [
-  [-1, 5, -1, 9, -1, -1, -1, -1, -1],
-  [8, -1, -1, -1, 4, -1, 3, -1, 7],
-  [-1, -1, -1, 2, 8, -1, 1, 9, -1],
-  [5, 3, 8, 6, -1, 7, 9, 4, -1],
-  [-1, 2, -1, 3, -1, 1, -1, -1, -1],
-  [1, -1, 9, 8, -1, 4, 6, 2, 3],
-  [9, -1, 7, 4, -1, -1, -1, -1, -1],
-  [-1, 4, 5, -1, -1, -1, 2, -1, 9],
-  [-1, -1, -1, -1, 3, -1, -1, 7, -1],
-];
+// const initial = [
+//   [-1, 5, -1, 9, -1, -1, -1, -1, -1],
+//   [8, -1, -1, -1, 4, -1, 3, -1, 7],
+//   [-1, -1, -1, 2, 8, -1, 1, 9, -1],
+//   [5, 3, 8, 6, -1, 7, 9, 4, -1],
+//   [-1, 2, -1, 3, -1, 1, -1, -1, -1],
+//   [1, -1, 9, 8, -1, 4, 6, 2, 3],
+//   [9, -1, 7, 4, -1, -1, -1, -1, -1],
+//   [-1, 4, 5, -1, -1, -1, 2, -1, 9],
+//   [-1, -1, -1, -1, 3, -1, -1, 7, -1],
+// ];
+
+const initial = generateSudoku();
 
 export const App = () => {
   const [sudokuArr, setSudokuArr] = useState(getDeepCopy(initial));
+  const [time, setTime] = useState(0);
+  const initialTime = useRef(new Date().getTime());
+  // const setTimeCallback = useRef(t => setTime(t));
+
+  function newGame() {
+    let newSudoku = generateSudoku();
+    setSudokuArr(newSudoku);
+  }
 
   function getDeepCopy(arr) {
     return JSON.parse(JSON.stringify(arr));
   }
+
+  const timerClickedHandler = () => {
+    setTime(0);
+    initialTime.current = new Date().getTime();
+  };
 
   function onInputChange(e, row, column) {
     var value = parseInt(e.target.value) || -1,
@@ -132,10 +149,31 @@ export const App = () => {
     setSudokuArr(sudoku);
   }
 
+  // useEffect(() => {
+  //   initialTime.current = new Date().getTime();
+  //   const timer = setInterval(() => {
+  //     const delay = new Date().getTime() - initialTime.current;
+  //     setTimeCallback.current(delay / 1000);
+  //   }, 1000);
+  //   return () => {
+  //     clearInterval(timer);
+  //   };
+  // });
+
   return (
     <div className="App">
       <div className="App-header">
         <h1>MY SUDOKU</h1>
+        <div className="buttonLevel">
+          <button className="easyButton">Easy</button>
+          <button className="mediumButton">Medium</button>
+          <button className="expertButton">Expert</button>
+        </div>
+        {/* <Timer /> */}
+        {new Date(time * 1000).toISOString().substr(11, 8)}
+        <button className="newGameButton" onClick={newGame}>
+          New Game
+        </button>
         <table>
           <tbody>
             {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((row, rIndex) => {
@@ -151,7 +189,10 @@ export const App = () => {
                         className={(column + 1) % 3 === 0 ? 'rBorder' : ''}
                       >
                         <input
-                          onChange={e => onInputChange(e, row, column)}
+                          onChange={e => {
+                            onInputChange(e, row, column);
+                            timerClickedHandler();
+                          }}
                           value={
                             sudokuArr[row][column] === -1
                               ? ''
