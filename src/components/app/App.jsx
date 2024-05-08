@@ -2,12 +2,17 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { generateSudoku } from '../sudokuGenerator/sudokuGenerator.js';
 import BtnLevelCont from '../levelFilter/levelChange.js';
-import { getDeepCopy, compareSudokus, solver } from './sudokuFunctions.js';
+import {
+  getDeepCopy,
+  compareSudokus,
+  solver,
+  checkValid,
+} from './sudokuFunctions.js';
 
 import ButtonCont from '../button/ButtonCont.jsx';
 import Table from '../sudokuField/Table.jsx';
 import NewGameBtn from '../newGame/NewGame.jsx';
-// import Timer from './Timer.jsx';
+import Timer from '../Timer.jsx';
 
 const initial = generateSudoku();
 
@@ -15,6 +20,7 @@ export const App = () => {
   const [sudokuArr, setSudokuArr] = useState(getDeepCopy(initial));
   const [time, setTime] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
+  // const [difficulty, setDifficulty] = useState(81);
 
   useEffect(() => {
     let timer;
@@ -52,11 +58,17 @@ export const App = () => {
   function onInputChange(e, row, column) {
     var value = parseInt(e.target.value) || -1,
       grid = getDeepCopy(sudokuArr);
-    if (value === -1 || (value >= 1 && value <= 9)) {
+    if (
+      value === -1 ||
+      (value >= 1 && value <= 9 && checkValid(grid, row, column, value))
+    ) {
       grid[row][column] = value;
+    } else {
+      alert('Incorrect value! Try again!!!');
     }
 
     setSudokuArr(grid);
+    setGameStarted(true);
   }
 
   function checkSudoku() {
@@ -65,6 +77,7 @@ export const App = () => {
     let compare = compareSudokus(sudokuArr, sudoku);
     if (compare.isComplete) {
       alert('Congratulations! You have solved Sudoku!');
+      setGameStarted(false);
     } else if (compare.isSolvable) {
       alert('Keep going!');
     } else {
@@ -87,9 +100,9 @@ export const App = () => {
     <div className="App">
       <div className="App-header">
         <h1>MY SUDOKU</h1>
+        {/* <BtnLevelCont setDifficulty={setDifficulty} /> */}
         <BtnLevelCont chooseLevel={chooseLevel} />
-        {/* <Timer /> */}
-        <div>Time: {new Date(time * 1000).toISOString().substr(11, 8)}</div>
+        <Timer time={time} />
         <NewGameBtn newGame={newGame} />
         <Table
           sudokuArr={sudokuArr}

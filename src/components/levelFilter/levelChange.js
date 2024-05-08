@@ -19,17 +19,23 @@ import React from 'react';
 // }
 
 const BtnLevelCont = ({ chooseLevel }) => {
+  // const handleLevelClick = difficultyValue => {
+  //   setDifficulty(difficultyValue);
+  // };
   return (
     <div className="buttonLevel">
       {/* <button className={className} onClick={chooseLevel}>
         {name}
       </button> */}
+      {/* <button className="easyButton" onClick={() => handleLevelClick(10)}> */}
       <button className="easyButton" onClick={chooseLevel}>
         Easy
       </button>
+      {/* <button className="mediumButton" onClick={() => handleLevelClick(40)}> */}
       <button className="mediumButton" onClick={chooseLevel}>
         Medium
       </button>
+      {/* <button className="expertButton" onClick={() => handleLevelClick(60)}> */}
       <button className="expertButton" onClick={chooseLevel}>
         Expert
       </button>

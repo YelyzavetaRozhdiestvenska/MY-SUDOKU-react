@@ -19,9 +19,9 @@ h1 {
 }
 
 .cellInput {
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
+  width: 8vmin;
+  height: 8vmin;
+  font-size: 3vmin;
   text-align: center;
   padding: 0;
   border: 1px solid #000;
@@ -46,8 +46,8 @@ table {
   font-weight: bold;
   padding: 12px 20px;
   border: none;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 4vmin;
+  font-size: 2.5vmin;
 }
 
 .mediumButton {
@@ -55,8 +55,8 @@ table {
   font-weight: bold;
   padding: 12px 20px;
   border: none;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 4vmin;
+  font-size: 2.5vmin;
   margin: 0px 40px;
 }
 
@@ -65,8 +65,8 @@ table {
   font-weight: bold;
   padding: 12px 20px;
   border: none;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 4vmin;
+  font-size: 2.5vmin;
 }
 
 .newGameButton {
@@ -74,8 +74,8 @@ table {
   font-weight: bold;
   padding: 12px 20px;
   border: none;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 4vmin;
+  font-size: 2.5vmin;
   margin: 20px 0;
 }
 
@@ -84,8 +84,8 @@ table {
   font-weight: bold;
   padding: 12px 20px;
   border: none;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 4vmin;
+  font-size: 2.5vmin;
 }
 
 .solveButton {
@@ -93,8 +93,8 @@ table {
   font-weight: bold;
   padding: 12px 20px;
   border: none;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 4vmin;
+  font-size: 2.5vmin;
   margin: 0px 40px;
 }
 
@@ -103,8 +103,8 @@ table {
   font-weight: bold;
   padding: 12px 20px;
   border: none;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 4vmin;
+  font-size: 2.5vmin;
 }
 
 .bBorder {

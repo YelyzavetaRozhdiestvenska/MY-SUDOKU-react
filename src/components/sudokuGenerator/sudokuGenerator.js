@@ -102,7 +102,7 @@ function validateBox(grid, row, column, value) {
   return true;
 }
 
-function removeCells(grid) {
+function removeCells(grid, difficulty) {
   // количество заполняемых ячеек
   // const DIFFICULTY = chooseLevel();
   const DIFFICULTY = 30;
@@ -119,5 +119,3 @@ function removeCells(grid) {
   }
   return resultGrid;
 }
-
-// Доделать динамическое значение сложностм
