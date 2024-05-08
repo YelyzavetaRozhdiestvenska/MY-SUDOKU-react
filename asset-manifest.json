@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/MY-SUDOKU-react/static/css/main.bcd1c215.css",
-    "main.js": "/MY-SUDOKU-react/static/js/main.f07e1110.js",
+    "main.css": "/MY-SUDOKU-react/static/css/main.4bc7482c.css",
+    "main.js": "/MY-SUDOKU-react/static/js/main.8235f568.js",
     "index.html": "/MY-SUDOKU-react/index.html",
-    "main.bcd1c215.css.map": "/MY-SUDOKU-react/static/css/main.bcd1c215.css.map",
-    "main.f07e1110.js.map": "/MY-SUDOKU-react/static/js/main.f07e1110.js.map"
+    "main.4bc7482c.css.map": "/MY-SUDOKU-react/static/css/main.4bc7482c.css.map",
+    "main.8235f568.js.map": "/MY-SUDOKU-react/static/js/main.8235f568.js.map"
   },
   "entrypoints": [
-    "static/css/main.bcd1c215.css",
-    "static/js/main.f07e1110.js"
+    "static/css/main.4bc7482c.css",
+    "static/js/main.8235f568.js"
   ]
 }
