@@ -1,3 +1,5 @@
+// import { chooseLevel } from '../levelFilter/levelChange.js';
+
 const GRID_SIZE = 9;
 const BOX_SIZE = 3;
 
@@ -102,7 +104,8 @@ function validateBox(grid, row, column, value) {
 
 function removeCells(grid) {
   // количество заполняемых ячеек
-  const DIFFICULTY = 50;
+  // const DIFFICULTY = chooseLevel();
+  const DIFFICULTY = 30;
   const resultGrid = [...grid].map(row => [...row]);
 
   let i = 0;
@@ -116,3 +119,5 @@ function removeCells(grid) {
   }
   return resultGrid;
 }
+
+// Доделать динамическое значение сложностм
