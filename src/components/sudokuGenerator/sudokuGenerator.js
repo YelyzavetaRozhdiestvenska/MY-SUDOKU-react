@@ -3,11 +3,12 @@
 const GRID_SIZE = 9;
 const BOX_SIZE = 3;
 
-export function generateSudoku() {
+export function generateSudoku(levelGame) {
   const sudoku = createEmptyGrid();
   resolveSudoku(sudoku);
   // возвращаем незаполненную сетку для игры:
-  return removeCells(sudoku);
+  console.log('new game Level', levelGame);
+  return removeCells(sudoku, levelGame);
 }
 
 // создаем 9 массивов и заполняем каждый из них массивом из 9
@@ -102,10 +103,12 @@ function validateBox(grid, row, column, value) {
   return true;
 }
 
-function removeCells(grid, difficulty) {
+function removeCells(grid, levelGame) {
   // количество заполняемых ячеек
-  // const DIFFICULTY = chooseLevel();
-  const DIFFICULTY = 30;
+
+  let DIFFICULTY = levelGame;
+
+  console.log('levelGame>>>>', levelGame);
   const resultGrid = [...grid].map(row => [...row]);
 
   let i = 0;

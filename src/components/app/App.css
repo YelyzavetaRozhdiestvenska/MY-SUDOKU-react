@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+main {
   background-color: saddlebrown;
   min-height: 100vh;
   display: flex;
@@ -50,6 +50,15 @@ table {
   font-size: 2.5vmin;
 }
 
+.easyButton:hover {
+  opacity: 0.8;
+}
+
+.easyButton:active {
+  background: #3e6ae1;
+  color: #fff;
+}
+
 .mediumButton {
   background-color: orange;
   font-weight: bold;
@@ -60,6 +69,15 @@ table {
   margin: 0px 40px;
 }
 
+.mediumButton:hover {
+  opacity: 0.8;
+}
+
+.mediumButton:active {
+  background: #3e6ae1;
+  color: #fff;
+}
+
 .expertButton {
   background-color: crimson;
   font-weight: bold;
@@ -67,6 +85,15 @@ table {
   border: none;
   border-radius: 4vmin;
   font-size: 2.5vmin;
+}
+
+.expertButton:hover {
+  opacity: 0.8;
+}
+
+.expertButton:active {
+  background: #3e6ae1;
+  color: #fff;
 }
 
 .newGameButton {

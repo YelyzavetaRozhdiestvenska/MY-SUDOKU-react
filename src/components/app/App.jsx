@@ -1,28 +1,32 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import { generateSudoku } from '../sudokuGenerator/sudokuGenerator.js';
-import BtnLevelCont from '../levelFilter/levelChange.js';
 import {
   getDeepCopy,
   compareSudokus,
   solver,
   checkValid,
 } from './sudokuFunctions.js';
-
 import ButtonCont from '../button/ButtonCont.jsx';
 import Table from '../sudokuField/Table.jsx';
 import NewGameBtn from '../newGame/NewGame.jsx';
-import Timer from '../Timer.jsx';
+import Timer from '../timer/Timer';
+import BtnLevelCont from '../levelFilter/buttonLevel';
 
-const initial = generateSudoku();
+const initialGameLevel = localStorage.getItem('level');
+const value = initialGameLevel ? initialGameLevel : 20;
+const initial = generateSudoku(value);
 
 export const App = () => {
   const [sudokuArr, setSudokuArr] = useState(getDeepCopy(initial));
   const [time, setTime] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
-  // const [difficulty, setDifficulty] = useState(81);
+  const [levelGame, setLevelGame] = useState(0);
 
   useEffect(() => {
+    if (levelGame === 20 || levelGame === 40 || levelGame === 60)
+      localStorage.setItem('level', levelGame);
+
     let timer;
     if (gameStarted) {
       timer = setInterval(() => {
@@ -32,27 +36,17 @@ export const App = () => {
     return () => {
       clearInterval(timer);
     };
-  }, [gameStarted]);
+  }, [gameStarted, levelGame]);
+
+  function handleClickLevel(level) {
+    setLevelGame(level);
+  }
 
   function newGame() {
-    let newSudoku = generateSudoku();
+    let newSudoku = generateSudoku(value);
     setSudokuArr(newSudoku);
     setGameStarted(true);
     setTime(0);
-  }
-
-  function chooseLevel(className) {
-    let emptyCells;
-    if (className === 'easyButton') {
-      emptyCells = 20;
-    } else if (className === 'mediumButton') {
-      emptyCells = 40;
-    } else if (className === 'mediumButton') {
-      emptyCells = 60;
-    } else {
-      emptyCells = 1;
-    }
-    return { emptyCells, className };
   }
 
   function onInputChange(e, row, column) {
@@ -71,6 +65,12 @@ export const App = () => {
     setGameStarted(true);
   }
 
+  function solveSudoku() {
+    let sudoku = getDeepCopy(initial);
+    solver(sudoku);
+    setSudokuArr(sudoku);
+  }
+
   function checkSudoku() {
     let sudoku = getDeepCopy(initial);
     solver(sudoku);
@@ -85,12 +85,6 @@ export const App = () => {
     }
   }
 
-  function solveSudoku() {
-    let sudoku = getDeepCopy(initial);
-    solver(sudoku);
-    setSudokuArr(sudoku);
-  }
-
   function resetSudoku() {
     let sudoku = getDeepCopy(initial);
     setSudokuArr(sudoku);
@@ -98,10 +92,10 @@ export const App = () => {
 
   return (
     <div className="App">
-      <div className="App-header">
+      <main>
         <h1>MY SUDOKU</h1>
-        {/* <BtnLevelCont setDifficulty={setDifficulty} /> */}
-        <BtnLevelCont chooseLevel={chooseLevel} />
+        <BtnLevelCont handleClickLevel={handleClickLevel} />
+        <p>Your Level Game: {levelGame}</p>
         <Timer time={time} />
         <NewGameBtn newGame={newGame} />
         <Table
@@ -115,7 +109,7 @@ export const App = () => {
           solveSudoku={solveSudoku}
           resetSudoku={resetSudoku}
         />
-      </div>
+      </main>
     </div>
   );
 };
