@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Table from '../sudokuField/Table.jsx';
-import NewGameBtn from '../newGame/NewGame.jsx';
-import Timer from '../timer/Timer';
-import BtnCont from '../levelFilter/LevelGameBtn.jsx';
-import ControlBtnCont from '../button/ControlBtn.jsx';
+import Table from '../components/sudokuField/Table.jsx';
+import NewGameBtn from '../components/newGame/NewGame.jsx';
+import Timer from '../components/timer/Timer';
+import BtnCont from '../components/levelFilter/LevelGameBtn.jsx';
+import ControlBtnCont from '../components/button/ControlBtn.jsx';
 import {
   generateSudoku,
   getDeepCopy,
