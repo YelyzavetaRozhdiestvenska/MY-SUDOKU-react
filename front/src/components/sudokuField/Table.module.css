@@ -1,0 +1,23 @@
+table {
+  border-collapse: collapse;
+  border: 3px solid bisque;
+  background-color: bisque;
+  margin-top: 10px;
+}
+
+.cellInput {
+  width: 8vmin;
+  height: 8vmin;
+  font-size: 3vmin;
+  text-align: center;
+  padding: 0;
+  border: 1px solid #000;
+}
+
+.bBorder {
+  border-bottom: 2px solid saddlebrown;
+}
+
+.rBorder {
+  border-right: 2px solid saddlebrown;
+}

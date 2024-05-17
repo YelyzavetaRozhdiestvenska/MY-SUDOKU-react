@@ -1,5 +1,8 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Table from '../sudokuField/Table.jsx';
 import NewGameBtn from '../newGame/NewGame.jsx';
 import Timer from '../timer/Timer';
@@ -87,7 +90,7 @@ export const App = () => {
     ) {
       grid[row][column] = value;
     } else {
-      alert('Incorrect value! Try again!!!');
+      toast.error('Incorrect value! Try again!!!');
     }
 
     setSudokuArr(grid);
@@ -105,12 +108,12 @@ export const App = () => {
     solver(solvedSudoku);
     let compare = compareSudokus(sudokuArr, solvedSudoku);
     if (compare.isComplete) {
-      alert('Congratulations! You have solved Sudoku!');
+      toast.success('Congratulations! You have solved Sudoku!');
       setGameStarted(false);
     } else if (compare.isSolvable) {
-      alert('Keep going!');
+      toast.info('Keep going!');
     } else {
-      alert('Sudoku cannot be solved. Try again!');
+      toast.error('Sudoku cannot be solved. Try again!');
     }
   }
 
@@ -123,6 +126,7 @@ export const App = () => {
       <main>
         <h1>MY SUDOKU</h1>
         <p>Choose your game level:</p>
+        <ToastContainer />
 
         <BtnCont switchDifficulty={setDifficulty} />
         <NewGameBtn newGame={newGame} />

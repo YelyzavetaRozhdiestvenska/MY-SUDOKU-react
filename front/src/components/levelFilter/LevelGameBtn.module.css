@@ -1,0 +1,88 @@
+.buttonLevel {
+  margin: 0px;
+}
+
+.easyButton {
+  border: none;
+  border-radius: 4vmin;
+  text-decoration: none;
+  color: bisque;
+  background: green;
+  box-shadow: 0 5px 0 #143e01;
+  padding: 8px 16px;
+  font-size: 2.5vmin;
+  font-weight: bold;
+
+  &:hover {
+    background: #143e01;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: #143e01;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+    scale: 0.9;
+  }
+}
+
+.mediumButton {
+  border: none;
+  border-radius: 4vmin;
+  text-decoration: none;
+  color: bisque;
+  background: orange;
+  box-shadow: 0 5px 0 #d97d00;
+  margin: 0px 40px;
+  padding: 8px 16px;
+  font-size: 2.5vmin;
+  font-weight: bold;
+
+  &:hover {
+    background: #d97d00;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: #d97d00;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+    scale: 0.9;
+  }
+}
+
+.expertButton {
+  border: none;
+  border-radius: 4vmin;
+  text-decoration: none;
+  color: bisque;
+  background: crimson;
+  box-shadow: 0 5px 0 #bb0a33;
+  padding: 8px 16px;
+  font-size: 2.5vmin;
+  font-weight: bold;
+
+  &:hover {
+    background: #bb0a33;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+  }
+
+  &:active {
+    background: #bb0a33;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+    scale: 0.9;
+  }
+}

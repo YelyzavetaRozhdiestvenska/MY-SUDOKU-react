@@ -1,8 +1,9 @@
 import React from 'react';
+import css from './NewGame.module.css';
 
 const NewGameBtn = ({ newGame }) => {
   return (
-    <button className="newGameButton" onClick={newGame}>
+    <button className={css.newGameButton} onClick={newGame}>
       New Game
     </button>
   );
