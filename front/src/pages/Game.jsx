@@ -1,4 +1,4 @@
-import './App.css';
+import css from './Game.module.css';
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,42 +16,9 @@ import {
   checkValid,
   solver,
   compareSudokus,
-} from '../functionsSudoku';
-export const App = () => {
-  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  // const initial = generateSudoku();
+} from '../components/functionsSudoku.js';
 
-  // const [sudokuArr, setSudokuArr] = useState(getDeepCopy(initial));
-  // const [time, setTime] = useState(0);
-  // const [gameStarted, setGameStarted] = useState(false);
-  // const [levelGame, setLevelGame] = useState(0);
-
-  // function solveSudoku() {
-  //   let sudoku = getDeepCopy(initial);
-  //   solver(sudoku);
-  //   setSudokuArr(sudoku);
-  // }
-
-  // function checkSudoku() {
-  //   let sudoku = getDeepCopy(initial);
-  //   solver(sudoku);
-  //   let compare = compareSudokus(sudokuArr, sudoku);
-  //   if (compare.isComplete) {
-  //     alert('Congratulations! You have solved Sudoku!');
-  //     setGameStarted(false);
-  //   } else if (compare.isSolvable) {
-  //     alert('Keep going!');
-  //   } else {
-  //     alert('Sudoku cannot be solved. Try again!');
-  //   }
-  // }
-
-  // function resetSudoku() {
-  //   let sudoku = getDeepCopy(initial);
-  //   setSudokuArr(sudoku);
-  // }
-  // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+const Game = () => {
   const [difficulty, setDifficulty] = useState(81);
   const [sudokuArr, setSudokuArr] = useState(createEmptyGrid());
   const [time, setTime] = useState(0);
@@ -122,7 +89,7 @@ export const App = () => {
   }
 
   return (
-    <div className="App">
+    <div className={css.game}>
       <main>
         <h1>MY SUDOKU</h1>
         <p>Choose your game level:</p>
@@ -141,3 +108,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default Game;
