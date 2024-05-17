@@ -1,10 +1,8 @@
 form {
-  width: 320px;
-  margin-right: 24px;
-  margin-left: auto;
-  margin-top: 24px;
-
-  background-color: #808080;
+  width: 50vh;
+  height: max-content;
+  margin: 10vh auto 0 auto;
+  background-color: saddlebrown;
   border: 2px solid #f29f05;
   border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
@@ -13,23 +11,18 @@ form {
 label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 24px;
-  margin-right: 5px;
-  margin-left: 5px;
-  margin-top: 24px;
+  color: bisque;
+  margin: 24px 10px 24px 10px;
 }
 
 button {
   border: none;
   border-radius: 10px;
   text-decoration: none;
-  color: white;
+  color: bisque;
   background: #f29f05;
   box-shadow: 0 5px 0 #d97d00;
-  margin-bottom: 24px;
-  margin-right: 5px;
-  margin-left: 5px;
-  margin-top: 24px;
+  margin: 24px 10px 24px 10px;
 
   &:hover {
     background: #d97d00;

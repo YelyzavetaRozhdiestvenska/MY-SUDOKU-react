@@ -18,7 +18,41 @@ import {
   compareSudokus,
 } from '../components/functionsSudoku.js';
 
-const Game = () => {
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// const initial = generateSudoku();
+
+// const [sudokuArr, setSudokuArr] = useState(getDeepCopy(initial));
+// const [time, setTime] = useState(0);
+// const [gameStarted, setGameStarted] = useState(false);
+// const [levelGame, setLevelGame] = useState(0);
+
+// function solveSudoku() {
+//   let sudoku = getDeepCopy(initial);
+//   solver(sudoku);
+//   setSudokuArr(sudoku);
+// }
+
+// function checkSudoku() {
+//   let sudoku = getDeepCopy(initial);
+//   solver(sudoku);
+//   let compare = compareSudokus(sudokuArr, sudoku);
+//   if (compare.isComplete) {
+//     alert('Congratulations! You have solved Sudoku!');
+//     setGameStarted(false);
+//   } else if (compare.isSolvable) {
+//     alert('Keep going!');
+//   } else {
+//     alert('Sudoku cannot be solved. Try again!');
+//   }
+// }
+
+// function resetSudoku() {
+//   let sudoku = getDeepCopy(initial);
+//   setSudokuArr(sudoku);
+// }
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+export const Game = () => {
   const [difficulty, setDifficulty] = useState(81);
   const [sudokuArr, setSudokuArr] = useState(createEmptyGrid());
   const [time, setTime] = useState(0);
@@ -108,5 +142,3 @@ const Game = () => {
     </div>
   );
 };
-
-export default Game;

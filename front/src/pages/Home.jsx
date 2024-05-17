@@ -1,22 +1,25 @@
-// const styles = {
-//   container: {
-//     minHeight: 'calc(100vh - 50px)',
-//     display: 'flex',
-//     justifyContent: 'center',
-//   },
-//   title: {
-//     fontWeight: 500,
-//     fontSize: 48,
-//     marginRight: '24px',
-//     marginLeft: 'auto',
-//     color: '#2a363b',
-//   },
-// };
+const styles = {
+  container: {
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    minHeight: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  title: {
+    fontWeight: 700,
+    fontSize: 56,
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    marginTop: '30vh',
+    color: 'saddlebrown',
+  },
+};
 
-// export default function Home() {
-//   return (
-//     <div style={styles.container}>
-//       <h1 style={styles.title}>My Sudoku </h1>
-//      </div>
-//   );
-// }
+export function Home() {
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.title}>SUDOKU </h1>
+    </div>
+  );
+}

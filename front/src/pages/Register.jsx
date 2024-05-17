@@ -1,13 +1,23 @@
 // import { Helmet } from 'react-helmet';
-// import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 
-// export default function Register() {
-//   return (
-//     <div>
-//       <Helmet>
-//         <title>Registration</title>
-//       </Helmet>
-//       <RegisterForm />
-//     </div>
-//   );
-// }
+const styles = {
+  container: {
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    minHeight: 'calc(100vh - 50px)',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+};
+
+export function Register() {
+  return (
+    <div style={styles.container}>
+      {/* <Helmet> */}
+      <title>Registration</title>
+      {/* </Helmet> */}
+      <RegisterForm />
+    </div>
+  );
+}

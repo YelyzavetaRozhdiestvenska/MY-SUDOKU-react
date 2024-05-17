@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3vh 0;
+  background: orange;
+  border-bottom: 1px solid black;
+
+  > nav {
+    display: flex;
+    margin-right: 20px;
+    margin-left: auto;
+  }
+}
+
+.navLink {
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: saddlebrown;
+  font-weight: 700;
+
+  &.active {
+    color: white;
+    background-color: orangered;
+  }
+}
